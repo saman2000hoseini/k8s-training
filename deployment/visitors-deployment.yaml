@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: visitors
+  name: visitors
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: visitors
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: visitors
+    spec:
+      containers:
+      - image: saman2000h/visitor:1.0
+        name: visitor
+        resources: {}
+        ports:
+          - containerPort: 65432
+        env:
+          - name: visitor_redis_password
+            valueFrom:
+              secretKeyRef:
+                key: REDIS_PASSWORD
+                name: redis-secret
+        volumeMounts:
+          - mountPath: /app/config.yml
+            subPath: config.yml
+            name: config-map
+            readOnly: true
+      volumes:
+        - name: config-map
+          configMap:
+            name: visitors-config
+status: {}

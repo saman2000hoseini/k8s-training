@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: visitors-config
+data:
+  config.yml: |-
+    redis:
+      address: redis-service:6379
+    server:
+      port: 65432

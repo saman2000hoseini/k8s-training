@@ -1,0 +1,9 @@
+version: "3.1"
+services:
+  redis:
+    image: redis:6.2.6
+    hostname: redis
+    container_name: redis
+    command: redis-server --requirepass "secret"
+    ports:
+      - 6379:6379

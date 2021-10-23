@@ -34,6 +34,10 @@ spec:
             subPath: config.yml
             name: config-map
             readOnly: true
+        livenessProbe:
+          httpGet:
+            port: 65432
+            path: /healthz
       volumes:
         - name: config-map
           configMap:

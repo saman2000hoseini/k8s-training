@@ -5,6 +5,6 @@ metadata:
 data:
   config.yml: |-
     redis:
-      address: visitors-redis-replicas:6379
+      address: visitors-redis-master:6379
     server:
       port: 65432

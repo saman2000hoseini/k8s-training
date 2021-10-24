@@ -4,9 +4,7 @@ This project aims to deploy a simple project (which is visitor counter) on kuber
 ### Deploy steps
 `kubectl apply -f secret.yaml`
 
-`kubectl apply -f redis-deployment.yaml`
-
-`kubectl apply -f redis-service.yaml`
+`helm install --set global.redis.password=supersecretpass visitors bitnami/redis`
 
 `kubectl apply -f config-map.yaml`
 

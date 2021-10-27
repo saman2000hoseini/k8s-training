@@ -32,9 +32,10 @@ spec:
             - containerPort: 6379
           resources: { }
           volumeMounts:
-            - mountPath: /redis-data
+            - mountPath: /data
               name: data
       volumes:
         - name: data
-          emptyDir: { }
+          persistentVolumeClaim:
+            claimName: redis-pvc
 status: { }

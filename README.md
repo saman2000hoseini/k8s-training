@@ -2,6 +2,10 @@
 This project aims to deploy a simple project (which is visitor counter) on kubernetes.
 
 ### Deploy steps
+`kubectl apply -f pv.yaml`
+
+`kubectl apply -f pvc.yaml`
+
 `kubectl apply -f secret.yaml`
 
 `kubectl apply -f redis-deployment.yaml`

@@ -1,6 +1,6 @@
 module github.com/saman2000hoseini/k8s-training
 
-go 1.17
+go 1.21
 
 require (
 	github.com/go-redis/redis v6.15.9+incompatible

@@ -6,7 +6,7 @@ services:
     container_name: redis
     command: redis-server --requirepass "secret"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - redis-data:/data
   visitors:
     build: .
     ports:
@@ -14,4 +14,4 @@ services:
     depends_on:
       - redis
 volumes:
-  postgres-data:
+  redis-data:
